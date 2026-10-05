@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Monitoring Suhu Medis</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</head>
+<body>
+
+  <div class="header">
+    <h1>Monitoring Suhu Medis</h1>
+    <div class="badge-conn">
+      <div class="dot" id="connDot"></div>
+      <span id="connStatus">Menunggu Perangkat...</span>
+    </div>
+  </div>
+
+  <div class="grid-top">
+    <!-- 1. Real-time Panel -->
+    <div class="panel">
+      <div class="panel-title">Suhu Terkini</div>
+      <div class="temp-box">
+        <div class="temp-value" id="tempDisplay">--.-°C</div>
+        <div style="color: var(--text-dim); font-size: 0.85rem; margin-top: 10px;" id="statusText">Status: Aman</div>
+      </div>
+    </div>
+
+    <!-- 2. Pengaturan Threshold -->
+    <div class="panel">
+      <div class="panel-title">Pengaturan Ambang Batas</div>
+      <div class="form-group">
+        <label style="font-size: 0.85rem; color: var(--text-dim);">Batas Suhu Maksimal (°C)</label>
+        <input type="number" id="inputMax" value="8.0" step="0.1">
+      </div>
+      <div class="form-group">
+        <label style="font-size: 0.85rem; color: var(--text-dim);">Batas Suhu Minimal (°C)</label>
+        <input type="number" id="inputMin" value="2.0" step="0.1">
+      </div>
+      <button onclick="saveThreshold()">Simpan Pengaturan</button>
+    </div>
+
+    <!-- 3. Event Log -->
+    <div class="panel">
+      <div class="panel-title">Log Kejadian Peringatan</div>
+      <div class="log-container" id="logList">
+        <div class="log-item" style="color: var(--text-dim);">Sistem dimulai...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Grafik Historis -->
+  <div class="panel">
+    <div class="panel-title">Riwayat Suhu (Live Chart)</div>
+    <div class="chart-container">
+      <canvas id="tempChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
