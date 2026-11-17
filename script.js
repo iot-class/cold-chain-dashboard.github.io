@@ -1,5 +1,5 @@
-// MENGGUNAKAN BROKER BARU (HIVEMQ)
-    const MQTT_BROKER = "wss://broker.hivemq.com:8884/mqtt"; 
+// MENGGUNAKAN BROKER EMQX
+const MQTT_BROKER = "wss://broker.emqx.io:8084/mqtt";
     
     // PREFIX TOPIK BARU AGAR TIDAK BENTROK
     const BASE_TOPIC = "ioTKesehatan_Kelompok_4_7766"; 

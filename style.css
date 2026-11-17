@@ -1,12 +1,12 @@
 :root {
-  --bg: #0f172a;
-  --panel: #1e293b;
-  --text: #f8fafc;
-  --text-dim: #94a3b8;
-  --safe: #10b981;
+  --bg: #005A9C;
+  --panel: #73A5CA;
+  --text: #fafdfd;
+  --text-dim: #091057;
+  --safe: #fdfdfd;
   --danger: #ef4444;
   --border: #334155;
-  --accent: #3b82f6;
+  --accent: #0044ff;
 }
 * {
   box-sizing: border-box;
